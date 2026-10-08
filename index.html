@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>オセロ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game">
+    <h1>オセロ</h1>
+    <!-- ==========================
+         対戦モード
+         ========================== -->
+    <div class="mode-select">
+      <div class="mode-title">
+        対戦モード
+      </div>
+      <div class="mode-buttons">
+        <button
+          id="humanModeButton"
+          class="mode-button selected"
+          type="button"
+        >
+          👥 対人戦
+        </button>
+        <button
+          id="cpuModeButton"
+          class="mode-button"
+          type="button"
+        >
+          🤖 CPU対戦
+        </button>
+      </div>
+      <!-- CPU難易度 -->
+      <div
+        id="difficultyArea"
+        class="difficulty-area hidden"
+      >
+        <div class="difficulty-title">
+          CPUの強さ
+        </div>
+        <div class="difficulty-buttons">
+          <button
+            class="difficulty-button selected"
+            data-level="easy"
+            type="button"
+          >
+            初級
+          </button>
+          <button
+            class="difficulty-button"
+            data-level="normal"
+            type="button"
+          >
+            中級
+          </button>
+          <button
+            class="difficulty-button"
+            data-level="hard"
+            type="button"
+          >
+            上級
+          </button>
+          <button
+            class="difficulty-button"
+            data-level="hospitality"
+            type="button"
+          >
+            🎁 接待
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- ==========================
+         スコア
+         ========================== -->
+    <div class="status">
+      <div class="score">
+        ⚫
+        <span id="blackCount">2</span>
+      </div>
+      <div id="turn">
+        黒のターン
+      </div>
+      <div class="score">
+        ⚪
+        <span id="whiteCount">2</span>
+      </div>
+    </div>
+    <!-- ==========================
+         盤面
+         ========================== -->
+    <div
+      id="board"
+      class="board"
+    ></div>
+    <!-- ==========================
+         メッセージ
+         ========================== -->
+    <div
+      id="message"
+      class="message"
+    >
+      黒からスタート！
+    </div>
+    <!-- ==========================
+         先読み形勢
+         ========================== -->
+    <div class="advantage">
+      <div class="advantage-title">
+        先読み形勢
+      </div>
+      <div class="advantage-subtitle">
+        6手先まで複数展開を分析
+      </div>
+      <div class="advantage-bar">
+        <div
+          id="blackAdvantage"
+          class="black-bar"
+        ></div>
+        <div
+          id="whiteAdvantage"
+          class="white-bar"
+        ></div>
+      </div>
+      <div class="advantage-numbers">
+        <span>
+          ⚫ 黒
+          <strong id="blackPercent">50</strong>%
+        </span>
+        <span>
+          ⚪ 白
+          <strong id="whitePercent">50</strong>%
+        </span>
+      </div>
+      <div
+        id="analysisMessage"
+        class="analysis-message"
+      >
+        分析中...
+      </div>
+    </div>
+    <!-- ==========================
+         リセット
+         ========================== -->
+    <button
+      id="resetButton"
+      type="button"
+    >
+      ゲームをリセット
+    </button>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
